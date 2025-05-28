@@ -1,0 +1,227 @@
+/* Estilos para home2.html - Versão atualizada */
+
+/* Layout principal */
+.v3_10 {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    position: relative;
+}
+
+/* Cabeçalho */
+.v3_21 {
+    width: 100%;
+    height: 200px;
+    background: rgba(217,217,217,1);
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.v16_2 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.v3_51 {
+    width: 115px;
+    height: 115px;
+    background: url('../images/v3_51.png') center/cover;
+    border-radius: 45px;
+}
+
+.v3_14 {
+    width: 329px;
+    height: 39px;
+    background: rgba(0,0,0,0.43);
+    position: absolute;
+    left: 15px;
+    top: 40px;
+}
+
+.v3_52 {
+    position: absolute;
+    left: 134px;
+    top: 45px;
+    color: white;
+    font-family: 'Irish Grover', cursive;
+    font-size: 24px;
+}
+
+.v3_48 {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 104px;
+    height: 91px;
+}
+
+.v3_49 {
+    width: 86px;
+    height: 75px;
+    background: rgba(31,31,31,1);
+    margin: 7px 9px;
+}
+
+.v3_23 {
+    position: absolute;
+    top: 136px;
+    right: 20px;
+    font-size: 36px;
+    color: rgba(0,0,0,1);
+}
+
+/* Navegação */
+nav {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.v57_10, .v57_16, .v57_22 {
+    background: rgba(36,22,94,1);
+    height: 64px;
+    border-radius: 30px;
+    margin: 5px 10px;
+}
+
+.v57_12, .v57_18, .v57_24 {
+    color: white;
+    padding: 15px 30px;
+    font-size: 36px;
+}
+
+.v3_33 {
+    font-size: 24px;
+    color: rgba(0,0,0,1);
+    margin: 0 15px;
+}
+
+/* Conteúdo principal */
+.welcome-message {
+    text-align: center;
+    margin: 30px auto;
+    max-width: 800px;
+}
+
+.v8_3 {
+    font-size: 20px;
+    color: rgba(0,0,0,1);
+    margin-top: 10px;
+}
+
+/* Notícias */
+.news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.v3_37, .v3_40, .v3_42, .v18_75 {
+    background: rgba(217,217,217,1);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.v16_42, .v9_8, .v18_62, .v18_79 {
+    width: 100%;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 15px;
+}
+
+.v16_42 {
+    background-image: url('../images/v16_42.png');
+}
+
+.v9_8 {
+    background-image: url('../images/v9_8.png');
+}
+
+.v18_62 {
+    background-image: url('../images/v18_62.png');
+}
+
+.v18_79 {
+    background-image: url('../images/v18_79.png');
+}
+
+.v9_35, .v9_10, .v18_76, .v18_80 {
+    color: rgba(0,0,0,1);
+    font-size: 18px;
+}
+
+.read-more {
+    color: rgba(68, 40, 209, 1);
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Rodapé */
+footer {
+    background-color: rgba(217,217,217,1);
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .v3_21 {
+        height: auto;
+        padding: 20px;
+    }
+    
+    .v16_2 {
+        position: relative;
+        top: auto;
+        left: auto;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    
+    .v3_48 {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 0 auto;
+    }
+    
+    .v3_23 {
+        position: relative;
+        top: auto;
+        right: auto;
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .v57_10, .v57_16, .v57_22 {
+        width: 100%;
+        max-width: 300px;
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .v3_52 {
+        font-size: 20px;
+        left: 120px;
+    }
+    
+    .v3_23 {
+        font-size: 28px;
+    }
+}

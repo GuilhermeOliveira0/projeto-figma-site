@@ -1,0 +1,99 @@
+/* Estilos específicos para a página inicial não autenticada */
+body {
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: rgba(36, 22, 94, 1);
+    padding: 30px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.logo-img {
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    background-image: url('../images/logo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+.logo-text {
+    font-family: 'Irish Grover', cursive;
+    font-size: 36px;
+    color: white;
+    background: none;
+    padding: 0;
+}
+
+.main-content {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.welcome-message h1 {
+    font-size: 2.5rem;
+    color: rgba(36, 22, 94, 1);
+    margin-bottom: 20px;
+}
+
+.welcome-message p {
+    font-size: 1.5rem;
+    color: #555;
+}
+
+.nav-btn {
+    background-color: hwb(250 16% 18%);
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.nav-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgb(0, 0, 0);
+}
+
+footer {
+    background-color: rgba(36, 22, 94, 1);
+    color: white;
+    padding: 20px 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .logo-img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .logo-text {
+        font-size: 28px;
+    }
+    
+    .welcome-message h1 {
+        font-size: 2rem;
+    }
+    
+    .welcome-message p {
+        font-size: 1.2rem;
+    }
+}

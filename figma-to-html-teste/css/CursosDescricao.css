@@ -1,0 +1,220 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 14px;
+}
+.v71_14 {
+  width: 700px;
+  height: 1844px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+.v71_15 {
+  width: 700px;
+  height: 173px;
+  background: rgba(217,217,217,1);
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+.v71_17 {
+  width: 115px;
+  height: 115px;
+  background: url("../images/v71_17.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 17px;
+  left: 40px;
+  border-top-left-radius: 45px;
+  border-top-right-radius: 45px;
+  border-bottom-left-radius: 45px;
+  border-bottom-right-radius: 45px;
+  overflow: hidden;
+}
+.v71_39 {
+  width: 419px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 58px;
+  left: 216px;
+  font-family: Itim;
+  font-weight: Regular;
+  font-size: 36px;
+  opacity: 1;
+  text-align: left;
+}
+.v71_41 {
+  width: 633px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 201px;
+  left: 47px;
+  font-family: Itim;
+  font-weight: Regular;
+  font-size: 24px;
+  opacity: 1;
+  text-align: left;
+}
+.v71_18 {
+  width: 700px;
+  height: 192px;
+  background: rgba(217,217,217,1);
+  opacity: 1;
+  position: absolute;
+  top: 1652px;
+  left: 0px;
+  overflow: hidden;
+}
+.v71_20 {
+  width: 229px;
+  height: 67px;
+  background: url("../images/v71_20.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 1722px;
+  left: 73px;
+  overflow: hidden;
+}
+.v71_21 {
+  width: 229px;
+  height: 67px;
+  background: rgba(36,22,94,1);
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  overflow: hidden;
+}
+.v71_22 {
+  width: 153px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 1733px;
+  left: 139px;
+  font-family: Itim;
+  font-weight: Regular;
+  font-size: 36px;
+  opacity: 1;
+  text-align: left;
+}
+.v71_51 {
+  width: 229px;
+  height: 66px;
+  background: rgba(36,22,94,1);
+  opacity: 1;
+  position: absolute;
+  top: 1720px;
+  left: 397px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  overflow: hidden;
+}
+.v71_52 {
+  width: 182px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 1732px;
+  left: 431px;
+  font-family: Itim;
+  font-weight: Regular;
+  font-size: 36px;
+  opacity: 1;
+  text-align: left;
+}
+.v71_42 {
+  width: 500px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 390px;
+  left: 45px;
+  font-family: Itim;
+  font-weight: Regular;
+  opacity: 1;
+  text-align: left;
+}
+.v71_43 {
+  width: 537px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 554px;
+  left: 40px;
+  font-family: Itim;
+  font-weight: Regular;
+  opacity: 1;
+  text-align: left;
+}
+.v71_44 {
+  width: 636px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 718px;
+  left: 40px;
+  font-family: Itim;
+  font-weight: Regular;
+  opacity: 1;
+  text-align: left;
+}
+.v71_45 {
+  width: 494px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 1075px;
+  left: 40px;
+  font-family: Itim;
+  font-weight: Regular;
+  opacity: 1;
+  text-align: left;
+}
+.v71_46 {
+  width: 679px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 882px;
+  left: 40px;
+  font-family: Itim;
+  font-weight: Regular;
+  opacity: 1;
+  text-align: left;
+}
+.v71_47 {
+  width: 471px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 1239px;
+  left: 40px;
+  font-family: Itim;
+  font-weight: Regular;
+  opacity: 1;
+  text-align: left;
+}
+.v71_48 {
+  width: 596px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 1434px;
+  left: 40px;
+  font-family: Itim;
+  font-weight: Regular;
+  font-size: 24px;
+  opacity: 1;
+  text-align: left;
+}
