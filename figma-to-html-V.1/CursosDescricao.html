@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- (Cabeçalho mantido igual) -->
+</head>
+<body>
+    <div class="page-container">
+        <div class="logo-header">
+            <img src="../images/logo.png" alt="Tech Cursos">
+        </div>
+        
+        <a href="cursoLista.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Voltar para todos os cursos
+        </a>
+        
+        <div class="course-header">
+            <div class="course-image">
+                <img id="courseImage" src="" alt="Imagem do Curso">
+            </div>
+            <div class="course-info">
+                <h1 class="course-title" id="courseTitle">Nome do Curso</h1>
+                <div class="course-meta">
+                    <span id="courseDuration"><i class="far fa-clock"></i> </span>
+                    <span id="courseLevel"><i class="fas fa-user-graduate"></i> </span>
+                    <span><i class="fas fa-certificate"></i> Certificado</span>
+                </div>
+                <p id="courseShortDescription">Descrição breve do curso</p>
+                <div class="course-price" id="coursePrice">R$ 0,00</div>
+                <a href="#" class="enroll-btn">Matricule-se agora</a>
+            </div>
+        </div>
+        
+        <div class="course-content">
+            <div class="course-tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'sobre')">Sobre o Curso</button>
+                <button class="tab-btn" onclick="openTab(event, 'conteudo')">Conteúdo Programático</button>
+                <button class="tab-btn" onclick="openTab(event, 'professor')">Professor</button>
+                <button class="tab-btn" onclick="openTab(event, 'avaliacoes')">Avaliações</button>
+            </div>
+            
+            <div id="sobre" class="tab-content active">
+                <h3>Descrição Completa</h3>
+                <p id="courseFullDescription">Descrição completa do curso...</p>
+                <h3>O que você vai aprender</h3>
+                <ul id="courseLearnList">
+                    <!-- Itens serão adicionados via JS -->
+                </ul>
+            </div>
+            
+            <div id="conteudo" class="tab-content">
+                <h3>Módulos do Curso</h3>
+                <div id="courseModules">
+                    <!-- Módulos serão adicionados via JS -->
+                </div>
+            </div>
+            
+            <div id="professor" class="tab-content">
+                <div class="teacher-profile">
+                    <img id="teacherImage" src="" alt="Professor" style="width:100px; border-radius:50%; float:left; margin-right:20px;">
+                    <h3 id="teacherName">Nome do Professor</h3>
+                    <p id="teacherBio">Biografia do professor...</p>
+                </div>
+            </div>
+            
+            <div id="avaliacoes" class="tab-content">
+                <div id="courseReviews">
+                    <!-- Avaliações serão adicionadas via JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ícones Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <script>
+        // Dados dos cursos (poderia vir de uma API)
+        const courses = {
+            fullstack: {
+                title: "Web Developer Full Stack",
+                image: "../images/curso-fullstack.jpg",
+                duration: "120 horas",
+                level: "Intermediário",
+                shortDescription: "Domine o desenvolvimento web front-end e back-end com as tecnologias mais demandadas pelo mercado.",
+                price: "R$ 599,90",
+                fullDescription: "Este curso completo de Web Development Full Stack vai te preparar para criar aplicações web modernas desde o front-end até o back-end. Você aprenderá HTML5, CSS3, JavaScript ES6+, React, Node.js, Express e MongoDB para construir aplicações completas.",
+                learnList: [
+                    "Criar interfaces responsivas com HTML5 e CSS3",
+                    "Programar com JavaScript moderno (ES6+)",
+                    "Desenvolver aplicações com React",
+                    "Construir APIs RESTful com Node.js e Express"
+                ],
+                modules: [
+                    {
+                        title: "Módulo 1: Fundamentos Web (20 horas)",
+                        items: ["HTML5 e Semântica", "CSS3 e Flexbox", "Grid Layout", "Design Responsivo"]
+                    },
+                    {
+                        title: "Módulo 2: JavaScript Moderno (30 horas)",
+                        items: ["ES6+ Features", "DOM Manipulation", "Async/Await", "Fetch API"]
+                    }
+                ],
+                teacher: {
+                    name: "Carlos Silva",
+                    image: "../images/professor.jpg",
+                    bio: "Desenvolvedor Full Stack com 10 anos de experiência no mercado, tendo trabalhado em grandes empresas como TechSolutions e WebMaster. Especialista em JavaScript e arquitetura de aplicações web escaláveis."
+                },
+                reviews: [
+                    {
+                        name: "Ana Oliveira",
+                        rating: "★★★★★",
+                        text: "O curso superou minhas expectativas! Consegui meu primeiro emprego como desenvolvedora júnior após completar apenas 60% do conteúdo."
+                    }
+                ]
+            },
+            datascience: {
+                // ... estrutura similar para Data Science
+            },
+            uxui: {
+                // ... estrutura similar para UX/UI
+            }
+        };
+
+        // Carrega os dados do curso baseado na URL
+        function loadCourseData() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const courseId = urlParams.get('course');
+            
+            if (courseId && courses[courseId]) {
+                const course = courses[courseId];
+                
+                // Preenche os dados do curso
+                document.getElementById('courseTitle').textContent = course.title;
+                document.getElementById('courseImage').src = course.image;
+                document.getElementById('courseImage').alt = course.title;
+                document.getElementById('courseDuration').textContent += course.duration;
+                document.getElementById('courseLevel').textContent += course.level;
+                document.getElementById('courseShortDescription').textContent = course.shortDescription;
+                document.getElementById('coursePrice').textContent = course.price;
+                document.getElementById('courseFullDescription').textContent = course.fullDescription;
+                
+                // Preenche a lista de aprendizados
+                const learnList = document.getElementById('courseLearnList');
+                course.learnList.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = item;
+                    learnList.appendChild(li);
+                });
+                
+                // Preenche os módulos
+                const modulesContainer = document.getElementById('courseModules');
+                course.modules.forEach(module => {
+                    const moduleDiv = document.createElement('div');
+                    moduleDiv.className = 'module';
+                    
+                    const h4 = document.createElement('h4');
+                    h4.textContent = module.title;
+                    
+                    const ul = document.createElement('ul');
+                    module.items.forEach(item => {
+                        const li = document.createElement('li');
+                        li.textContent = item;
+                        ul.appendChild(li);
+                    });
+                    
+                    moduleDiv.appendChild(h4);
+                    moduleDiv.appendChild(ul);
+                    modulesContainer.appendChild(moduleDiv);
+                });
+                
+                // Preenche dados do professor
+                document.getElementById('teacherImage').src = course.teacher.image;
+                document.getElementById('teacherName').textContent = course.teacher.name;
+                document.getElementById('teacherBio').textContent = course.teacher.bio;
+                
+                // Preenche avaliações
+                const reviewsContainer = document.getElementById('courseReviews');
+                course.reviews.forEach(review => {
+                    const reviewDiv = document.createElement('div');
+                    reviewDiv.className = 'review';
+                    
+                    const h4 = document.createElement('h4');
+                    h4.innerHTML = `${review.name} <span class="rating">${review.rating}</span>`;
+                    
+                    const p = document.createElement('p');
+                    p.textContent = `"${review.text}"`;
+                    
+                    reviewDiv.appendChild(h4);
+                    reviewDiv.appendChild(p);
+                    reviewsContainer.appendChild(reviewDiv);
+                });
+            } else {
+                // Redireciona se o curso não existe
+                window.location.href = 'cursoLista.html';
+            }
+        }
+        
+        // Carrega os dados quando a página é aberta
+        window.onload = loadCourseData;
+        
+        // Função das tabs (mantida igual)
+        function openTab(evt, tabName) {
+            // ... implementação original
+        }
+    </script>
+</body>
+</html>

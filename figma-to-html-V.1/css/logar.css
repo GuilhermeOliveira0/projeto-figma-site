@@ -1,0 +1,190 @@
+/* Estilos para a página de login - Versão atualizada */
+
+/* Layout principal */
+.v18_102 {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+
+/* Cabeçalho */
+.v18_103 {
+    width: 100%;
+    height: 194px;
+    background: rgba(217,217,217,1);
+    position: relative;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.v25_11 {
+    width: 115px;
+    height: 115px;
+    background: url('../images/logo.png') center/cover;
+    position: absolute;
+    top: 24px;
+    left: 50px;
+    border-radius: 45px;
+}
+
+.v51_141 {
+    position: absolute;
+    top: 58px;
+    left: 258px;
+    font-size: 36px;
+    color: rgba(0,0,0,1);
+}
+
+.v51_142 {
+    position: absolute;
+    top: 120px;
+    left: 186px;
+    font-size: 24px;
+    color: rgba(0,0,0,1);
+    max-width: 400px;
+}
+
+.v96_2 {
+    position: absolute;
+    top: 178px;
+    left: 314px;
+    width: 104px;
+    height: 91px;
+}
+
+.v96_3 {
+    width: 86px;
+    height: 75px;
+    background: rgba(31,31,31,1);
+    margin: 7px 9px;
+}
+
+/* Formulário */
+.login-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.form-group {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.v18_104, .v25_13 {
+    font-family: 'Archivo', sans-serif;
+    font-size: 40px;
+    color: rgba(0,0,0,1);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.v25_15, .v25_16 {
+    width: 100%;
+    height: 38px;
+    background: rgba(217,217,217,1);
+    border-radius: 5px;
+}
+
+/* Links */
+.v25_20 {
+    font-family: 'Archivo', sans-serif;
+    font-size: 24px;
+    color: rgba(0,0,0,1);
+    display: block;
+    text-align: center;
+    margin: 30px 0;
+}
+
+/* Botões */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.v51_13, .v51_291 {
+    background: rgba(36,22,94,1);
+    width: 238px;
+    height: 64px;
+    border-radius: 30px;
+    position: relative;
+}
+
+.v51_14, .v51_293 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 36px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Rodapé */
+.v51_129 {
+    width: 100%;
+    height: 194px;
+    background: rgba(217,217,217,1);
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .v18_103 {
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .v25_11 {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin: 0 auto 20px;
+    }
+    
+    .v51_141, .v51_142 {
+        position: relative;
+        top: auto;
+        left: auto;
+        text-align: center;
+        margin: 10px auto;
+    }
+    
+    .v96_2 {
+        display: none;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .v51_13, .v51_291 {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .v18_104, .v25_13 {
+        font-size: 30px;
+    }
+    
+    .v25_20 {
+        font-size: 18px;
+    }
+    
+    .v51_14, .v51_293 {
+        font-size: 28px;
+    }
+}

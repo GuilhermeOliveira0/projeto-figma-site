@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Cursos - Tech Cursos</title>
+    <link href="./css/noticia1.css" rel="stylesheet">
+    <style>
+        .page-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .logo-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo-header img {
+            height: 80px;
+        }
+        
+        h1 {
+            color: #112374;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .course-card {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        
+        .course-card-img {
+            width: 200px;
+            height: 120px;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+        
+        .course-card-info {
+            flex: 1;
+        }
+        
+        .course-card-title {
+            color: #112374;
+            margin: 0 0 10px 0;
+            font-size: 1.2rem;
+        }
+        
+        .course-card-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 10px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .course-card-description {
+            margin-bottom: 15px;
+            color: #444;
+            font-size: 0.95rem;
+        }
+        
+        .course-price {
+            font-weight: 600;
+            color: #112374;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        
+        .view-btn, .back-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #112374;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .view-btn:hover, .back-btn:hover {
+            background-color: #0a1a5a;
+        }
+        
+        .search-filter {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .search-box {
+            flex: 1;
+            min-width: 300px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .filter-select {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+            font-size: 1rem;
+        }
+        
+        .course-level {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .beginner {
+            background-color: #e6f7e6;
+            color: #2e7d32;
+        }
+        
+        .intermediate {
+            background-color: #fff8e1;
+            color: #ff8f00;
+        }
+        
+        .advanced {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+        
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .course-card {
+                flex-direction: column;
+            }
+            
+            .course-card-img {
+                width: 100%;
+                height: auto;
+                max-height: 200px;
+            }
+            
+            .search-filter {
+                flex-direction: column;
+            }
+            
+            .search-box, .filter-select {
+                width: 100%;
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <a href="home2.html" class="back-btn">Voltar</a>
+        
+        <div class="logo-header">
+            <img src="images/logo.png" alt="Tech Cursos">
+        </div>
+        
+        <h1>Nossos Cursos</h1>
+        
+        <div class="search-filter">
+            <input type="text" class="search-box" placeholder="Pesquisar cursos..." id="searchInput">
+            <select class="filter-select" id="categoryFilter">
+                <option value="all">Todas as categorias</option>
+                <option value="programming">Programação</option>
+                <option value="data">Dados</option>
+                <option value="design">Design</option>
+                <option value="cloud">Cloud</option>
+            </select>
+            <select class="filter-select" id="levelFilter">
+                <option value="all">Todos os níveis</option>
+                <option value="beginner">Iniciante</option>
+                <option value="intermediate">Intermediário</option>
+                <option value="advanced">Avançado</option>
+            </select>
+        </div>
+        
+        <div id="coursesContainer">
+            <!-- Curso 1 - Python -->
+            <div class="course-card" data-category="programming" data-level="beginner">
+                <img src="images/curso-python.jpg" alt="Python para Iniciantes" class="course-card-img">
+                <div class="course-card-info">
+                    <h3 class="course-card-title">Python para Iniciantes</h3>
+                    <div class="course-card-meta">
+                        <span><i class="far fa-clock"></i> 60 horas</span>
+                        <span class="course-level beginner">Iniciante</span>
+                        <span><i class="fas fa-certificate"></i> Certificado</span>
+                    </div>
+                    <p class="course-card-description">Aprenda Python desde o básico até a criação de seus primeiros programas.</p>
+                    <div class="course-price">R$ 299,90</div>
+                </div>
+            </div>
+            
+            <!-- Curso 2 - Full Stack -->
+            <div class="course-card" data-category="programming" data-level="intermediate">
+                <img src="images/curso-fullstack.jpg" alt="Web Developer Full Stack" class="course-card-img">
+                <div class="course-card-info">
+                    <h3 class="course-card-title">Web Developer Full Stack</h3>
+                    <div class="course-card-meta">
+                        <span><i class="far fa-clock"></i> 120 horas</span>
+                        <span class="course-level intermediate">Intermediário</span>
+                        <span><i class="fas fa-certificate"></i> Certificado</span>
+                    </div>
+                    <p class="course-card-description">Domine o desenvolvimento web front-end e back-end com as tecnologias mais demandadas pelo mercado.</p>
+                    <div class="course-price">R$ 599,90</div>
+                </div>
+            </div>
+            
+            <!-- Curso 3 - Data Science -->
+            <div class="course-card" data-category="data" data-level="intermediate">
+                <img src="images/curso-datascience.jpg" alt="Data Science com Python" class="course-card-img">
+                <div class="course-card-info">
+                    <h3 class="course-card-title">Data Science com Python</h3>
+                    <div class="course-card-meta">
+                        <span><i class="far fa-clock"></i> 80 horas</span>
+                        <span class="course-level intermediate">Intermediário</span>
+                        <span><i class="fas fa-certificate"></i> Certificado</span>
+                    </div>
+                    <p class="course-card-description">Aprenda análise de dados, machine learning e visualização com Python, Pandas e Scikit-learn.</p>
+                    <div class="course-price">R$ 499,90</div>
+                </div>
+            </div>
+            
+            <!-- Curso 4 - UX/UI -->
+            <div class="course-card" data-category="design" data-level="beginner">
+                <img src="images/curso-uxui.jpg" alt="UX/UI Design" class="course-card-img">
+                <div class="course-card-info">
+                    <h3 class="course-card-title">UX/UI Design</h3>
+                    <div class="course-card-meta">
+                        <span><i class="far fa-clock"></i> 60 horas</span>
+                        <span class="course-level beginner">Iniciante</span>
+                        <span><i class="fas fa-certificate"></i> Certificado</span>
+                    </div>
+                    <p class="course-card-description">Aprenda os princípios de User Experience e User Interface Design para criar produtos digitais intuitivos.</p>
+                    <div class="course-price">R$ 399,90</div>
+                </div>
+            </div>
+            
+            <!-- Curso 5 - JavaScript -->
+            <div class="course-card" data-category="programming" data-level="intermediate">
+                <img src="images/curso-javascript.jpg" alt="JavaScript Moderno" class="course-card-img">
+                <div class="course-card-info">
+                    <h3 class="course-card-title">JavaScript Moderno</h3>
+                    <div class="course-card-meta">
+                        <span><i class="far fa-clock"></i> 70 horas</span>
+                        <span class="course-level intermediate">Intermediário</span>
+                        <span><i class="fas fa-certificate"></i> Certificado</span>
+                    </div>
+                    <p class="course-card-description">Domine JavaScript moderno (ES6+) e frameworks front-end para criar aplicações web dinâmicas.</p>
+                    <div class="course-price">R$ 449,90</div>
+                </div>
+            </div>
+            
+            <!-- Curso 6 - Cloud -->
+            <div class="course-card" data-category="cloud" data-level="advanced">
+                <img src="images/curso-cloud.jpg" alt="Cloud Computing com AWS" class="course-card-img">
+                <div class="course-card-info">
+                    <h3 class="course-card-title">Cloud Computing com AWS</h3>
+                    <div class="course-card-meta">
+                        <span><i class="far fa-clock"></i> 90 horas</span>
+                        <span class="course-level advanced">Avançado</span>
+                        <span><i class="fas fa-certificate"></i> Certificado</span>
+                    </div>
+                    <p class="course-card-description">Domine os serviços AWS e arquitetura em nuvem para aplicações escaláveis e seguras.</p>
+                    <div class="course-price">R$ 699,90</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <script>
+        document.getElementById('searchInput').addEventListener('input', filterCourses);
+        document.getElementById('categoryFilter').addEventListener('change', filterCourses);
+        document.getElementById('levelFilter').addEventListener('change', filterCourses);
+        
+        function filterCourses() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const category = document.getElementById('categoryFilter').value;
+            const level = document.getElementById('levelFilter').value;
+            
+            const courses = document.querySelectorAll('.course-card');
+            
+            courses.forEach(course => {
+                const title = course.querySelector('.course-card-title').textContent.toLowerCase();
+                const description = course.querySelector('.course-card-description').textContent.toLowerCase();
+                
+                const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
+                const matchesCategory = category === 'all' || course.dataset.category === category;
+                const matchesLevel = level === 'all' || course.dataset.level === level;
+                
+                if (matchesSearch && matchesCategory && matchesLevel) {
+                    course.style.display = 'flex';
+                } else {
+                    course.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
