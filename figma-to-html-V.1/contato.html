@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato</title>
+    <link rel="stylesheet" href="./css/acessibilidade.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -83,5 +84,38 @@
             <p>Estamos disponíveis pra te responder o mais rápido possível. 😊</p>
         </main>
     </div>
+<!-- Barra de Acessibilidade -->
+<div class="barra-acessibilidade">
+    <button class="botao-acessibilidade" id="botao-acessibilidade">A</button>
+    <div class="menu-acessibilidade" id="menu-acessibilidade">
+        <div class="opcao-acessibilidade" id="aumentar-fonte">
+            <span>A+</span> Aumentar Fonte
+        </div>
+        <div class="opcao-acessibilidade" id="diminuir-fonte">
+            <span>A-</span> Diminuir Fonte
+        </div>
+        <div class="opcao-acessibilidade" id="resetar-fonte">
+            <span>A</span> Fonte Normal
+        </div>
+        <div class="opcao-acessibilidade" id="toggle-contraste">
+            <span>☀</span> Alto Contraste
+        </div>
+    </div>
+</div>
+
+<!-- Botão Voltar ao Topo -->
+<button id="voltar-topo" title="Voltar ao topo">↑</button>
+
+<!-- VLibras -->
+<div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+    </div>
+</div>
+
+<!-- Inclua o JavaScript -->
+<script src="acessibilidade.js"></script>
+
 </body>
 </html>

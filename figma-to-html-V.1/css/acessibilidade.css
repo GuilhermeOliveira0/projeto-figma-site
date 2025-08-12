@@ -1,0 +1,91 @@
+/* Controles de Acessibilidade */
+.barra-acessibilidade {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10000;
+}
+
+.botao-acessibilidade {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #112374;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.menu-acessibilidade {
+    display: none;
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    min-width: 200px;
+}
+
+.menu-acessibilidade.mostrar {
+    display: block;
+}
+
+.opcao-acessibilidade {
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.opcao-acessibilidade:hover {
+    background: #f0f0f0;
+}
+
+/* Estilos de acessibilidade */
+.fonte-aumentada {
+    font-size: 1.2em !important;
+}
+
+.fonte-aumentada * {
+    font-size: inherit !important;
+}
+
+.fonte-diminuida {
+    font-size: 0.8em !important;
+}
+
+.fonte-diminuida * {
+    font-size: inherit !important;
+}
+
+.alto-contraste {
+    background: #000 !important;
+    color: #fff !important;
+}
+
+.alto-contraste * {
+    background: #000 !important;
+    color: #fff !important;
+    border-color: #fff !important;
+}
+
+/* Botão voltar ao topo */
+#voltar-topo {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #112374;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: none;
+    z-index: 10000;
+}
