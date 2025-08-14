@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Itim&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Irish+Grover&display=swap" rel="stylesheet">
     <link href="css/home1.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/acessibilidade.css">
     <style>
         .nav-btn, .back-btn {
             display: inline-block;
@@ -36,15 +37,32 @@
         .container {
             padding-top: 70px;
         }
+
+        /* Estilo atualizado para a logo usando <img> */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-img {
+            width: 129px; /* Ajuste conforme necessário */
+            height: auto;
+        }
+        
+        .logo-text {
+            font-family: 'Irish Grover', cursive;
+            font-size: 24px;
+            color: #112374;
+        }
     </style>
 </head>
 <body>
-
-    
     <header>
         <div class="container">
             <div class="logo">
-                <div class="logo-img"></div>
+                <!-- Substituído o background-image por <img> -->
+                <img src="images/logo.png" alt="Logo Tech Cursos" class="logo-img">
                 <div class="logo-text">Tech Cursos</div>
             </div>
         </div>
@@ -68,5 +86,38 @@
             <p>© 2023 Tech Cursos - Todos os direitos reservados</p>
         </div>
     </footer>
+
+    <!-- Barra de Acessibilidade -->
+    <div class="barra-acessibilidade">
+        <button class="botao-acessibilidade" id="botao-acessibilidade">A</button>
+        <div class="menu-acessibilidade" id="menu-acessibilidade">
+            <div class="opcao-acessibilidade" id="aumentar-fonte">
+                <span>A+</span> Aumentar Fonte
+            </div>
+            <div class="opcao-acessibilidade" id="diminuir-fonte">
+                <span>A-</span> Diminuir Fonte
+            </div>
+            <div class="opcao-acessibilidade" id="resetar-fonte">
+                <span>A</span> Fonte Normal
+            </div>
+            <div class="opcao-acessibilidade" id="toggle-contraste">
+                <span>☀</span> Alto Contraste
+            </div>
+        </div>
+    </div>
+
+    <!-- Botão Voltar ao Topo -->
+    <button id="voltar-topo" title="Voltar ao topo">↑</button>
+
+    <!-- VLibras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <!-- Inclua o JavaScript -->
+    <script src="js/acessibilidade.js"></script>
 </body>
 </html>
