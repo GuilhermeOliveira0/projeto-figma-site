@@ -1,17 +1,71 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <!-- (Cabeçalho mantido igual) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descrição do Curso - Tech Cursos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/premium-styles.css">
+    <link rel="stylesheet" href="./css/navigation.css">
+    <link rel="stylesheet" href="./css/CursosDescricao.css">
+    <link rel="stylesheet" href="./css/reviews.css">
+    <link rel="stylesheet" href="./css/acessibilidade.css">
 </head>
 <body>
-    <div class="page-container">
-        <div class="logo-header">
-            <img src="../images/logo.png" alt="Tech Cursos">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="home1-premium.html" class="navbar-logo">
+                <img src="images/logo.png" alt="Tech Cursos" class="navbar-logo-img">
+                <span class="navbar-logo-text">Tech Cursos</span>
+            </a>
+            
+            <ul class="navbar-menu">
+                <li class="navbar-item">
+                    <a href="home1-premium.html" class="navbar-link">Início</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="cursosLista.html" class="navbar-link active">Cursos</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="novidades.html" class="navbar-link">Novidades</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="home2.html" class="navbar-link">Dashboard</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="contato.html" class="navbar-link">Contato</a>
+                </li>
+            </ul>
+            
+            <div class="navbar-actions">
+                <a href="logar.html" class="navbar-btn navbar-btn-secondary">Entrar</a>
+                <a href="cadastar.html" class="navbar-btn navbar-btn-primary">Cadastrar</a>
+            </div>
+            
+            <button class="navbar-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-        
-        <a href="cursoLista.html" class="back-btn">
+    </nav>
+
+    <div class="page-container">
+        <a href="cursosLista.html" class="back-btn">
             <i class="fas fa-arrow-left"></i> Voltar para todos os cursos
         </a>
+        
+        <!-- Breadcrumbs Navigation -->
+        <nav class="breadcrumbs">
+            <a href="home1-premium.html">Início</a>
+            <span class="separator">›</span>
+            <a href="home2.html">Dashboard</a>
+            <span class="separator">›</span>
+            <a href="cursosLista.html">Cursos</a>
+            <span class="separator">›</span>
+            <span class="current" id="courseBreadcrumb">Detalhes do Curso</span>
+        </nav>
         
         <div class="course-header">
             <div class="course-image">
@@ -63,7 +117,71 @@
             </div>
             
             <div id="avaliacoes" class="tab-content">
-                <div id="courseReviews">
+                <!-- Rating Summary -->
+                <div class="rating-summary">
+                    <div class="average-rating">
+                        <div class="rating-number" id="averageRating">4.8</div>
+                        <div class="rating-stars">★★★★★</div>
+                        <div class="total-ratings" id="totalRatings">542 avaliações</div>
+                    </div>
+                    <div class="rating-breakdown">
+                        <div class="rating-bar-item">
+                            <span>5★</span>
+                            <div class="rating-bar-container">
+                                <div class="rating-bar" style="width: 85%"></div>
+                            </div>
+                            <span class="rating-percentage">85%</span>
+                        </div>
+                        <div class="rating-bar-item">
+                            <span>4★</span>
+                            <div class="rating-bar-container">
+                                <div class="rating-bar" style="width: 10%"></div>
+                            </div>
+                            <span class="rating-percentage">10%</span>
+                        </div>
+                        <div class="rating-bar-item">
+                            <span>3★</span>
+                            <div class="rating-bar-container">
+                                <div class="rating-bar" style="width: 3%"></div>
+                            </div>
+                            <span class="rating-percentage">3%</span>
+                        </div>
+                        <div class="rating-bar-item">
+                            <span>2★</span>
+                            <div class="rating-bar-container">
+                                <div class="rating-bar" style="width: 1%"></div>
+                            </div>
+                            <span class="rating-percentage">1%</span>
+                        </div>
+                        <div class="rating-bar-item">
+                            <span>1★</span>
+                            <div class="rating-bar-container">
+                                <div class="rating-bar" style="width: 1%"></div>
+                            </div>
+                            <span class="rating-percentage">1%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add Review Section -->
+                <div class="add-review-section">
+                    <h3>Deixe sua avaliação</h3>
+                    <div class="star-rating-input">
+                        <span class="star" data-rating="1">☆</span>
+                        <span class="star" data-rating="2">☆</span>
+                        <span class="star" data-rating="3">☆</span>
+                        <span class="star" data-rating="4">☆</span>
+                        <span class="star" data-rating="5">☆</span>
+                    </div>
+                    <form id="reviewForm">
+                        <input type="text" id="reviewerName" placeholder="Seu nome" required>
+                        <textarea id="reviewText" placeholder="Compartilhe sua experiência com este curso..." rows="4" required></textarea>
+                        <button type="submit" class="submit-review-btn">Enviar Avaliação</button>
+                    </form>
+                </div>
+
+                <!-- Reviews List -->
+                <div id="courseReviews" class="reviews-list">
                     <!-- Avaliações serão adicionadas via JS -->
                 </div>
             </div>
@@ -72,6 +190,7 @@
 
     <!-- Ícones Font Awesome -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="js/reviews.js"></script>
     
     <script>
         // Dados dos cursos (poderia vir de uma API)
@@ -107,9 +226,28 @@
                 },
                 reviews: [
                     {
+                        id: 1,
                         name: "Ana Oliveira",
-                        rating: "★★★★★",
-                        text: "O curso superou minhas expectativas! Consegui meu primeiro emprego como desenvolvedora júnior após completar apenas 60% do conteúdo."
+                        rating: 5,
+                        text: "O curso superou minhas expectativas! Consegui meu primeiro emprego como desenvolvedora júnior após completar apenas 60% do conteúdo.",
+                        date: "15/09/2024",
+                        helpful: 42
+                    },
+                    {
+                        id: 2,
+                        name: "Carlos Santos",
+                        rating: 5,
+                        text: "Excelente didática e conteúdo atualizado. Os projetos práticos realmente ajudam a fixar o conhecimento. Recomendo muito!",
+                        date: "20/09/2024",
+                        helpful: 28
+                    },
+                    {
+                        id: 3,
+                        name: "Maria Silva",
+                        rating: 4,
+                        text: "Muito bom! O único ponto negativo é que gostaria de mais exercícios práticos, mas no geral o curso é ótimo.",
+                        date: "25/09/2024",
+                        helpful: 15
                     }
                 ]
             },
@@ -179,16 +317,32 @@
                     const reviewDiv = document.createElement('div');
                     reviewDiv.className = 'review';
                     
-                    const h4 = document.createElement('h4');
-                    h4.innerHTML = `${review.name} <span class="rating">${review.rating}</span>`;
+                    const stars = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
                     
-                    const p = document.createElement('p');
-                    p.textContent = `"${review.text}"`;
+                    reviewDiv.innerHTML = `
+                        <div class="review-header">
+                            <h4>
+                                ${review.name}
+                                <span class="rating">${stars}</span>
+                            </h4>
+                            <span class="review-date">${review.date}</span>
+                        </div>
+                        <p>${review.text}</p>
+                        <div class="review-actions">
+                            <button class="helpful-btn">
+                                <span>👍</span> Útil (${review.helpful})
+                            </button>
+                        </div>
+                    `;
                     
-                    reviewDiv.appendChild(h4);
-                    reviewDiv.appendChild(p);
                     reviewsContainer.appendChild(reviewDiv);
                 });
+                
+                // Update breadcrumb
+                const breadcrumb = document.getElementById('courseBreadcrumb');
+                if (breadcrumb) {
+                    breadcrumb.textContent = course.title;
+                }
             } else {
                 // Redireciona se o curso não existe
                 window.location.href = 'cursoLista.html';
@@ -233,8 +387,99 @@
     </div>
 </div>
 
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="Tech Cursos" class="footer-logo-img">
+                    <span class="footer-logo-text">Tech Cursos</span>
+                </div>
+                <p class="footer-description">
+                    Transformando carreiras através da educação em tecnologia. 
+                    Aprenda com os melhores cursos online e conquiste seu lugar no mercado tech.
+                </p>
+                <div class="footer-social">
+                    <a href="#" class="footer-social-link" aria-label="Facebook">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="footer-social-link" aria-label="Instagram">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="footer-social-link" aria-label="LinkedIn">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="footer-social-link" aria-label="YouTube">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/>
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-section-title">Cursos</h3>
+                <ul class="footer-links">
+                    <li><a href="cursosLista.html" class="footer-link">Todos os Cursos</a></li>
+                    <li><a href="cursosLista.html?category=programming" class="footer-link">Programação</a></li>
+                    <li><a href="cursosLista.html?category=data" class="footer-link">Data Science</a></li>
+                    <li><a href="cursosLista.html?category=design" class="footer-link">Design</a></li>
+                    <li><a href="cursosLista.html?category=cloud" class="footer-link">Cloud & DevOps</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-section-title">Empresa</h3>
+                <ul class="footer-links">
+                    <li><a href="home2.html" class="footer-link">Sobre Nós</a></li>
+                    <li><a href="novidades.html" class="footer-link">Blog</a></li>
+                    <li><a href="contato.html" class="footer-link">Contato</a></li>
+                    <li><a href="#" class="footer-link">Trabalhe Conosco</a></li>
+                    <li><a href="#" class="footer-link">Parceiros</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-section-title">Suporte</h3>
+                <ul class="footer-links">
+                    <li><a href="#" class="footer-link">Central de Ajuda</a></li>
+                    <li><a href="#" class="footer-link">FAQ</a></li>
+                    <li><a href="contato.html" class="footer-link">Fale Conosco</a></li>
+                    <li><a href="#" class="footer-link">Política de Reembolso</a></li>
+                    <li><a href="#" class="footer-link">Status do Sistema</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p class="footer-copyright">
+                © 2025 Tech Cursos. Todos os direitos reservados.
+            </p>
+            <div class="footer-legal">
+                <a href="#" class="footer-legal-link">Termos de Uso</a>
+                <a href="#" class="footer-legal-link">Política de Privacidade</a>
+                <a href="#" class="footer-legal-link">Cookies</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<button class="scroll-to-top" aria-label="Voltar ao topo">↑</button>
+
 <!-- Inclua o JavaScript -->
 <script src="js/acessibilidade.js"></script>
+<script src="js/navigation.js"></script>
 
 </body>
 </html>

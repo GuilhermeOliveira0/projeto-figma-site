@@ -4,55 +4,175 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Cursos - Tech Cursos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="./css/premium-styles.css" rel="stylesheet">
+    <link href="./css/navigation.css" rel="stylesheet">
     <link href="./css/noticia1.css" rel="stylesheet">
-       <link rel="stylesheet" href="./css/acessibilidade.css">
+    <link rel="stylesheet" href="./css/acessibilidade.css">
     <style>
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
         .page-container {
-            max-width: 1000px;
+            max-width: 1400px;
             margin: 40px auto;
-            padding: 30px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(255,255,255,0.98));
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1), 0 0 100px rgba(102, 126, 234, 0.05);
             position: relative;
+            overflow: hidden;
+        }
+        
+        .page-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 25%, #ffa500 50%, #667eea 75%, #764ba2 100%);
+            background-size: 200% 100%;
+            animation: gradientMove 3s linear infinite;
+        }
+        
+        @keyframes gradientMove {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 200% 0%; }
         }
         
         .logo-header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
         
         .logo-header img {
             height: 80px;
         }
         
+        /* Breadcrumbs Pattern */
+        .breadcrumbs {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 0;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumbs a {
+            color: #112374;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .breadcrumbs a:hover {
+            color: #0a1a5a;
+            text-decoration: underline;
+        }
+        
+        .breadcrumbs .separator {
+            color: #999;
+        }
+        
+        .breadcrumbs .current {
+            color: #666;
+            font-weight: 600;
+        }
+        
         h1 {
             color: #112374;
             text-align: center;
+            margin-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #112374 0%, #667eea 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+        
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
             margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #112374;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
         }
         
         .course-card {
             display: flex;
-            gap: 20px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            gap: 24px;
+            padding: 24px;
+            margin-bottom: 24px;
+            border-radius: 20px;
+            background: linear-gradient(to right bottom, #ffffff, #f8f9fa);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+        }
+        
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .course-card:hover::before {
+            left: 100%;
         }
         
         .course-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 12px 40px rgba(102, 126, 234, 0.15), 0 0 60px rgba(102, 126, 234, 0.08);
+            border-color: rgba(102, 126, 234, 0.3);
         }
         
         .course-card-img {
-            width: 200px;
-            height: 120px;
-            border-radius: 6px;
+            width: 220px;
+            height: 140px;
+            border-radius: 8px;
             object-fit: cover;
+            object-position: center;
+            flex-shrink: 0;
         }
         
         .course-card-info {
@@ -79,51 +199,110 @@
             font-size: 0.95rem;
         }
         
-        .course-price {
-            font-weight: 600;
-            color: #112374;
-            font-size: 1.1rem;
+        .course-rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
             margin-bottom: 10px;
+        }
+        
+        .stars {
+            color: #ffa500;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+        }
+        
+        .rating-count {
+            color: #666;
+            font-size: 0.85rem;
+        }
+        
+        .course-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+        
+        .course-price {
+            font-weight: 700;
+            color: #112374;
+            font-size: 1.3rem;
         }
         
         .view-btn, .back-btn {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 10px 24px;
             background-color: #112374;
             color: white;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 6px;
             font-weight: 600;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(17, 35, 116, 0.2);
         }
         
         .view-btn:hover, .back-btn:hover {
             background-color: #0a1a5a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(17, 35, 116, 0.3);
         }
         
         .search-filter {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 20px;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+            border-radius: 16px;
+            border: 1px solid rgba(102, 126, 234, 0.1);
         }
         
         .search-box {
             flex: 1;
             min-width: 300px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            padding: 14px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
             font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .search-box:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .search-box::placeholder {
+            color: #999;
         }
         
         .filter-select {
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            padding: 14px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
             background-color: white;
             font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 180px;
+        }
+        
+        .filter-select:hover {
+            border-color: #667eea;
+        }
+        
+        .filter-select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
         }
         
         .course-level {
@@ -162,8 +341,8 @@
             
             .course-card-img {
                 width: 100%;
-                height: auto;
-                max-height: 200px;
+                height: 200px;
+                object-fit: cover;
             }
             
             .search-filter {
@@ -178,14 +357,76 @@
     </style>
 </head>
 <body>
-    <div class="page-container">
-        <a href="home2.html" class="back-btn">Voltar</a>
-        
-        <div class="logo-header">
-            <img src="images/logo.png" alt="Tech Cursos">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="home1-premium.html" class="navbar-logo">
+                <img src="images/logo.png" alt="Tech Cursos" class="navbar-logo-img">
+                <span class="navbar-logo-text">Tech Cursos</span>
+            </a>
+            
+            <ul class="navbar-menu">
+                <li class="navbar-item">
+                    <a href="home1-premium.html" class="navbar-link">Início</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="cursosLista.html" class="navbar-link active">Cursos</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="novidades.html" class="navbar-link">Novidades</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="home2.html" class="navbar-link">Dashboard</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="contato.html" class="navbar-link">Contato</a>
+                </li>
+            </ul>
+            
+            <div class="navbar-actions">
+                <a href="logar.html" class="navbar-btn navbar-btn-secondary">Entrar</a>
+                <a href="cadastar.html" class="navbar-btn navbar-btn-primary">Cadastrar</a>
+            </div>
+            
+            <button class="navbar-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
+    </nav>
+
+    <div class="page-container">
+        <!-- Breadcrumbs Navigation -->
+        <nav class="breadcrumbs">
+            <a href="home1-premium.html">Início</a>
+            <span class="separator">›</span>
+            <a href="home2.html">Dashboard</a>
+            <span class="separator">›</span>
+            <span class="current">Cursos</span>
+        </nav>
         
         <h1>Nossos Cursos</h1>
+        <p class="subtitle">Aprenda com os melhores cursos de tecnologia do mercado</p>
+        
+        <div class="stats-row">
+            <div class="stat-item">
+                <span class="stat-number">12</span>
+                <span class="stat-label">Cursos Disponíveis</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">10.000+</span>
+                <span class="stat-label">Alunos Ativos</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">4.8★</span>
+                <span class="stat-label">Avaliação Média</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">900h+</span>
+                <span class="stat-label">Conteúdo Total</span>
+            </div>
+        </div>
         
         <div class="search-filter">
             <input type="text" class="search-box" placeholder="Pesquisar cursos..." id="searchInput">
@@ -215,8 +456,15 @@
                         <span class="course-level beginner">Iniciante</span>
                         <span><i class="fas fa-certificate"></i> Certificado</span>
                     </div>
+                    <div class="course-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">4.8 (326 avaliações)</span>
+                    </div>
                     <p class="course-card-description">Aprenda Python desde o básico até a criação de seus primeiros programas.</p>
-                    <div class="course-price">R$ 299,90</div>
+                    <div class="course-card-footer">
+                        <div class="course-price">R$ 299,90</div>
+                        <a href="CursosDescricao.html?course=python" class="view-btn">Ver Curso</a>
+                    </div>
                 </div>
             </div>
             
@@ -230,8 +478,15 @@
                         <span class="course-level intermediate">Intermediário</span>
                         <span><i class="fas fa-certificate"></i> Certificado</span>
                     </div>
+                    <div class="course-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">4.9 (542 avaliações)</span>
+                    </div>
                     <p class="course-card-description">Domine o desenvolvimento web front-end e back-end com as tecnologias mais demandadas pelo mercado.</p>
-                    <div class="course-price">R$ 599,90</div>
+                    <div class="course-card-footer">
+                        <div class="course-price">R$ 599,90</div>
+                        <a href="CursosDescricao.html?course=fullstack" class="view-btn">Ver Curso</a>
+                    </div>
                 </div>
             </div>
             
@@ -245,8 +500,15 @@
                         <span class="course-level intermediate">Intermediário</span>
                         <span><i class="fas fa-certificate"></i> Certificado</span>
                     </div>
+                    <div class="course-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-count">4.7 (289 avaliações)</span>
+                    </div>
                     <p class="course-card-description">Aprenda análise de dados, machine learning e visualização com Python, Pandas e Scikit-learn.</p>
-                    <div class="course-price">R$ 499,90</div>
+                    <div class="course-card-footer">
+                        <div class="course-price">R$ 499,90</div>
+                        <a href="CursosDescricao.html?course=datascience" class="view-btn">Ver Curso</a>
+                    </div>
                 </div>
             </div>
             
@@ -260,8 +522,15 @@
                         <span class="course-level beginner">Iniciante</span>
                         <span><i class="fas fa-certificate"></i> Certificado</span>
                     </div>
+                    <div class="course-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">4.9 (412 avaliações)</span>
+                    </div>
                     <p class="course-card-description">Aprenda os princípios de User Experience e User Interface Design para criar produtos digitais intuitivos.</p>
-                    <div class="course-price">R$ 399,90</div>
+                    <div class="course-card-footer">
+                        <div class="course-price">R$ 399,90</div>
+                        <a href="CursosDescricao.html?course=uxui" class="view-btn">Ver Curso</a>
+                    </div>
                 </div>
             </div>
             
@@ -275,8 +544,15 @@
                         <span class="course-level intermediate">Intermediário</span>
                         <span><i class="fas fa-certificate"></i> Certificado</span>
                     </div>
+                    <div class="course-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">4.8 (398 avaliações)</span>
+                    </div>
                     <p class="course-card-description">Domine JavaScript moderno (ES6+) e frameworks front-end para criar aplicações web dinâmicas.</p>
-                    <div class="course-price">R$ 449,90</div>
+                    <div class="course-card-footer">
+                        <div class="course-price">R$ 449,90</div>
+                        <a href="CursosDescricao.html?course=javascript" class="view-btn">Ver Curso</a>
+                    </div>
                 </div>
             </div>
             
@@ -290,8 +566,147 @@
                         <span class="course-level advanced">Avançado</span>
                         <span><i class="fas fa-certificate"></i> Certificado</span>
                     </div>
+                    <div class="course-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-count">4.6 (187 avaliações)</span>
+                    </div>
                     <p class="course-card-description">Domine os serviços AWS e arquitetura em nuvem para aplicações escaláveis e seguras.</p>
-                    <div class="course-price">R$ 699,90</div>
+                    <div class="course-card-footer">
+                        <div class="course-price">R$ 699,90</div>
+                        <a href="CursosDescricao.html?course=cloud" class="view-btn">Ver Curso</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curso 7 - React Native -->
+            <div class="course-card" data-category="programming" data-level="intermediate">
+                <img src="images/curso-javascript.jpg" alt="React Native" class="course-card-img">
+                <div class="course-card-info">
+                    <h3 class="course-card-title">React Native - Apps Mobile</h3>
+                    <div class="course-card-meta">
+                        <span><i class="far fa-clock"></i> 85 horas</span>
+                        <span class="course-level intermediate">Intermediário</span>
+                        <span><i class="fas fa-certificate"></i> Certificado</span>
+                    </div>
+                    <div class="course-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">4.9 (573 avaliações)</span>
+                    </div>
+                    <p class="course-card-description">Crie aplicativos móveis nativos para iOS e Android usando React Native e JavaScript.</p>
+                    <div class="course-card-footer">
+                        <div class="course-price">R$ 549,90</div>
+                        <a href="CursosDescricao.html?course=reactnative" class="view-btn">Ver Curso</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curso 8 - Inteligência Artificial -->
+            <div class="course-card" data-category="data" data-level="advanced">
+                <img src="images/curso-datascience.jpg" alt="IA e Machine Learning" class="course-card-img">
+                <div class="course-card-info">
+                    <h3 class="course-card-title">Inteligência Artificial & Machine Learning</h3>
+                    <div class="course-card-meta">
+                        <span><i class="far fa-clock"></i> 100 horas</span>
+                        <span class="course-level advanced">Avançado</span>
+                        <span><i class="fas fa-certificate"></i> Certificado</span>
+                    </div>
+                    <div class="course-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">5.0 (891 avaliações)</span>
+                    </div>
+                    <p class="course-card-description">Domine algoritmos de IA, redes neurais, deep learning e aplique em projetos reais.</p>
+                    <div class="course-card-footer">
+                        <div class="course-price">R$ 799,90</div>
+                        <a href="CursosDescricao.html?course=ai" class="view-btn">Ver Curso</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curso 9 - DevOps -->
+            <div class="course-card" data-category="cloud" data-level="intermediate">
+                <img src="images/curso-cloud.jpg" alt="DevOps" class="course-card-img">
+                <div class="course-card-info">
+                    <h3 class="course-card-title">DevOps - Docker, Kubernetes & CI/CD</h3>
+                    <div class="course-card-meta">
+                        <span><i class="far fa-clock"></i> 75 horas</span>
+                        <span class="course-level intermediate">Intermediário</span>
+                        <span><i class="fas fa-certificate"></i> Certificado</span>
+                    </div>
+                    <div class="course-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">4.8 (432 avaliações)</span>
+                    </div>
+                    <p class="course-card-description">Automatize deploys, aprenda containers, orquestração e práticas DevOps modernas.</p>
+                    <div class="course-card-footer">
+                        <div class="course-price">R$ 649,90</div>
+                        <a href="CursosDescricao.html?course=devops" class="view-btn">Ver Curso</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curso 10 - Cybersecurity -->
+            <div class="course-card" data-category="cloud" data-level="advanced">
+                <img src="images/curso-cloud.jpg" alt="Cybersecurity" class="course-card-img">
+                <div class="course-card-info">
+                    <h3 class="course-card-title">Cybersecurity - Segurança da Informação</h3>
+                    <div class="course-card-meta">
+                        <span><i class="far fa-clock"></i> 95 horas</span>
+                        <span class="course-level advanced">Avançado</span>
+                        <span><i class="fas fa-certificate"></i> Certificado</span>
+                    </div>
+                    <div class="course-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">4.9 (367 avaliações)</span>
+                    </div>
+                    <p class="course-card-description">Proteja sistemas, aprenda hacking ético, pentest e as melhores práticas de segurança.</p>
+                    <div class="course-card-footer">
+                        <div class="course-price">R$ 749,90</div>
+                        <a href="CursosDescricao.html?course=security" class="view-btn">Ver Curso</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curso 11 - Flutter -->
+            <div class="course-card" data-category="programming" data-level="intermediate">
+                <img src="images/curso-fullstack.jpg" alt="Flutter" class="course-card-img">
+                <div class="course-card-info">
+                    <h3 class="course-card-title">Flutter - Apps Multiplataforma</h3>
+                    <div class="course-card-meta">
+                        <span><i class="far fa-clock"></i> 70 horas</span>
+                        <span class="course-level intermediate">Intermediário</span>
+                        <span><i class="fas fa-certificate"></i> Certificado</span>
+                    </div>
+                    <div class="course-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">4.7 (298 avaliações)</span>
+                    </div>
+                    <p class="course-card-description">Desenvolva apps bonitos e performáticos para iOS, Android e Web com Flutter/Dart.</p>
+                    <div class="course-card-footer">
+                        <div class="course-price">R$ 499,90</div>
+                        <a href="CursosDescricao.html?course=flutter" class="view-btn">Ver Curso</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curso 12 - Blockchain -->
+            <div class="course-card" data-category="programming" data-level="advanced">
+                <img src="images/curso-javascript.jpg" alt="Blockchain" class="course-card-img">
+                <div class="course-card-info">
+                    <h3 class="course-card-title">Blockchain & Web3 Development</h3>
+                    <div class="course-card-meta">
+                        <span><i class="far fa-clock"></i> 80 horas</span>
+                        <span class="course-level advanced">Avançado</span>
+                        <span><i class="fas fa-certificate"></i> Certificado</span>
+                    </div>
+                    <div class="course-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-count">4.6 (215 avaliações)</span>
+                    </div>
+                    <p class="course-card-description">Aprenda Blockchain, Smart Contracts, Solidity, NFTs e desenvolva DApps na Web3.</p>
+                    <div class="course-card-footer">
+                        <div class="course-price">R$ 849,90</div>
+                        <a href="CursosDescricao.html?course=blockchain" class="view-btn">Ver Curso</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -357,8 +772,99 @@
     </div>
 </div>
 
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="Tech Cursos" class="footer-logo-img">
+                    <span class="footer-logo-text">Tech Cursos</span>
+                </div>
+                <p class="footer-description">
+                    Transformando carreiras através da educação em tecnologia. 
+                    Aprenda com os melhores cursos online e conquiste seu lugar no mercado tech.
+                </p>
+                <div class="footer-social">
+                    <a href="#" class="footer-social-link" aria-label="Facebook">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="footer-social-link" aria-label="Instagram">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="footer-social-link" aria-label="LinkedIn">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="footer-social-link" aria-label="YouTube">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/>
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-section-title">Cursos</h3>
+                <ul class="footer-links">
+                    <li><a href="cursosLista.html" class="footer-link">Todos os Cursos</a></li>
+                    <li><a href="cursosLista.html?category=programming" class="footer-link">Programação</a></li>
+                    <li><a href="cursosLista.html?category=data" class="footer-link">Data Science</a></li>
+                    <li><a href="cursosLista.html?category=design" class="footer-link">Design</a></li>
+                    <li><a href="cursosLista.html?category=cloud" class="footer-link">Cloud & DevOps</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-section-title">Empresa</h3>
+                <ul class="footer-links">
+                    <li><a href="home2.html" class="footer-link">Sobre Nós</a></li>
+                    <li><a href="novidades.html" class="footer-link">Blog</a></li>
+                    <li><a href="contato.html" class="footer-link">Contato</a></li>
+                    <li><a href="#" class="footer-link">Trabalhe Conosco</a></li>
+                    <li><a href="#" class="footer-link">Parceiros</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-section-title">Suporte</h3>
+                <ul class="footer-links">
+                    <li><a href="#" class="footer-link">Central de Ajuda</a></li>
+                    <li><a href="#" class="footer-link">FAQ</a></li>
+                    <li><a href="contato.html" class="footer-link">Fale Conosco</a></li>
+                    <li><a href="#" class="footer-link">Política de Reembolso</a></li>
+                    <li><a href="#" class="footer-link">Status do Sistema</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p class="footer-copyright">
+                © 2025 Tech Cursos. Todos os direitos reservados.
+            </p>
+            <div class="footer-legal">
+                <a href="#" class="footer-legal-link">Termos de Uso</a>
+                <a href="#" class="footer-legal-link">Política de Privacidade</a>
+                <a href="#" class="footer-legal-link">Cookies</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<button class="scroll-to-top" aria-label="Voltar ao topo">↑</button>
+
 <!-- Inclua o JavaScript -->
 <script src="js/acessibilidade.js"></script>
+<script src="js/navigation.js"></script>
 
 </body>
 </html>

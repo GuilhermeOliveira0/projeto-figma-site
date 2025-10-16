@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Tech Cursos</title>
-       <link rel="stylesheet" href="./css/acessibilidade.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/premium-styles.css">
+    <link rel="stylesheet" href="./css/navigation.css">
+    <link rel="stylesheet" href="./css/acessibilidade.css">
     <style>
         * {
             box-sizing: border-box;
@@ -186,7 +189,44 @@
     </style>
 </head>
 <body>
-    <a href="home1.html" class="back-btn">Voltar</a>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="home1-premium.html" class="navbar-logo">
+                <img src="images/logo.png" alt="Tech Cursos" class="navbar-logo-img">
+                <span class="navbar-logo-text">Tech Cursos</span>
+            </a>
+            
+            <ul class="navbar-menu">
+                <li class="navbar-item">
+                    <a href="home1-premium.html" class="navbar-link">Início</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="cursosLista.html" class="navbar-link">Cursos</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="novidades.html" class="navbar-link">Novidades</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="home2.html" class="navbar-link">Dashboard</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="contato.html" class="navbar-link">Contato</a>
+                </li>
+            </ul>
+            
+            <div class="navbar-actions">
+                <a href="logar.html" class="navbar-btn navbar-btn-secondary">Entrar</a>
+                <a href="cadastar.html" class="navbar-btn navbar-btn-primary">Cadastrar</a>
+            </div>
+            
+            <button class="navbar-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
     
     <div class="login-container">
         <!-- Logo e Nome da Plataforma -->
@@ -218,6 +258,8 @@
             Ainda não tem uma conta? <a href="cadastar.html">Cadastre-se aqui</a>
         </div>
     </div>
+    
+    <script src="js/navigation.js"></script>
 </body>
 <!-- Barra de Acessibilidade -->
 <div class="barra-acessibilidade">

@@ -4,10 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro - Tech Cursos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/premium-styles.css">
+    <link rel="stylesheet" href="./css/navigation.css">
     <link href="./css/cadastar.css" rel="stylesheet" />
     <link rel="stylesheet" href="./css/acessibilidade.css">
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="home1-premium.html" class="navbar-logo">
+                <img src="images/logo.png" alt="Tech Cursos" class="navbar-logo-img">
+                <span class="navbar-logo-text">Tech Cursos</span>
+            </a>
+            
+            <ul class="navbar-menu">
+                <li class="navbar-item">
+                    <a href="home1-premium.html" class="navbar-link">Início</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="cursosLista.html" class="navbar-link">Cursos</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="novidades.html" class="navbar-link">Novidades</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="home2.html" class="navbar-link">Dashboard</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="contato.html" class="navbar-link">Contato</a>
+                </li>
+            </ul>
+            
+            <div class="navbar-actions">
+                <a href="logar.html" class="navbar-btn navbar-btn-secondary">Entrar</a>
+                <a href="cadastar.html" class="navbar-btn navbar-btn-primary">Cadastrar</a>
+            </div>
+            
+            <button class="navbar-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
     <div class="register-container">
         <!-- Cabeçalho com logo -->
         <div class="brand-header">
@@ -69,7 +110,7 @@
 
             <div class="form-group terms-group">
                 <input type="checkbox" id="termos" name="termos">
-                <label for="termos">Li e aceito os <a href="termos.html" target="_blank">Termos de Uso</a> e <a href="privacidade.html" target="_blank">Política de Privacidade</a> (opcional)</label>
+                <label for="termos">Li e aceito os Termos de Uso e Política de Privacidade (opcional)</label>
             </div>
 
    <button type="button"
@@ -84,6 +125,8 @@
             Já tem uma conta? <a href="logar.html">Faça login aqui</a>
         </div>
     </div>
+    
+    <script src="js/navigation.js"></script>
     <!-- Barra de Acessibilidade -->
 <div class="barra-acessibilidade">
     <button class="botao-acessibilidade" id="botao-acessibilidade">A</button>

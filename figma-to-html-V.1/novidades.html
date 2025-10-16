@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Novidades - Tech Cursos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/premium-styles.css">
+    <link rel="stylesheet" href="./css/navigation.css">
     <link href="./css/noticia1.css" rel="stylesheet">
-    <script src="js/acessibilidade.js"></script>
-   <link rel="stylesheet" href="./css/acessibilidade.css">
-
-
+    <link rel="stylesheet" href="./css/acessibilidade.css">
     <style>
         .page-container {
             max-width: 1000px;
@@ -75,8 +75,10 @@
         
         .news-card img {
             width: 100%;
-            height: 180px;
+            height: 250px;
             object-fit: cover;
+            object-position: center top;
+            display: block;
         }
         
         .news-content {
@@ -136,12 +138,46 @@
     </style>
 </head>
 <body>
-    <div class="page-container">
-        <a href="home2.html" class="back-btn"><i class="fas fa-arrow-left"></i> Voltar</a>
-        
-        <div class="logo-header">
-            <img src="images/logo.png" alt="Tech Cursos">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="home1-premium.html" class="navbar-logo">
+                <img src="images/logo.png" alt="Tech Cursos" class="navbar-logo-img">
+                <span class="navbar-logo-text">Tech Cursos</span>
+            </a>
+            
+            <ul class="navbar-menu">
+                <li class="navbar-item">
+                    <a href="home1-premium.html" class="navbar-link">Início</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="cursosLista.html" class="navbar-link">Cursos</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="novidades.html" class="navbar-link active">Novidades</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="home2.html" class="navbar-link">Dashboard</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="contato.html" class="navbar-link">Contato</a>
+                </li>
+            </ul>
+            
+            <div class="navbar-actions">
+                <a href="logar.html" class="navbar-btn navbar-btn-secondary">Entrar</a>
+                <a href="cadastar.html" class="navbar-btn navbar-btn-primary">Cadastrar</a>
+            </div>
+            
+            <button class="navbar-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
+    </nav>
+    
+    <div class="page-container">
         
         <h1>Últimas Novidades</h1>
         
@@ -157,50 +193,40 @@
         <div class="news-grid">
             <!-- Notícia 1 -->
             <div class="news-card">
-                <a href="noticia1.html">
-                    <img src="images/v16_41.png" alt="Tecnologia da Informação">
-                    <div class="news-content">
-                        <span class="news-date"><i class="far fa-calendar-alt"></i> 15/06/2023</span>
-                        <h3>O conceito de Tecnologia da Informação</h3>
-                        <p>Entenda o que é TI e como ela está presente no nosso dia a dia.</p>
-                        <span class="read-more">Ler mais →</span>
-                    </div>
-                </a>
+                <img src="images/v16_41.png" alt="Tecnologia da Informação">
+                <div class="news-content">
+                    <span class="news-date"><i class="far fa-calendar-alt"></i> 15/06/2023</span>
+                    <h3>O conceito de Tecnologia da Informação</h3>
+                    <p>Entenda o que é TI e como ela está presente no nosso dia a dia.</p>
+                </div>
             </div>
             
             <!-- Notícia 2 -->
             <div class="news-card">
-                <a href="noticia2.html">
-                    <img src="images/not2.png" alt="Linguagens de Programação">
-                    <div class="news-content">
-                        <span class="news-date"><i class="far fa-calendar-alt"></i> 10/06/2023</span>
-                        <h3>Qual Linguagem de Programação Escolher?</h3>
-                        <p>Guia completo para iniciantes na área de programação.</p>
-                        <span class="read-more">Ler mais →</span>
-                    </div>
-                </a>
+                <img src="images/not2.png" alt="Linguagens de Programação">
+                <div class="news-content">
+                    <span class="news-date"><i class="far fa-calendar-alt"></i> 10/06/2023</span>
+                    <h3>Qual Linguagem de Programação Escolher?</h3>
+                    <p>Guia completo para iniciantes na área de programação.</p>
+                </div>
             </div>
             
             <!-- Notícia 3 -->
             <div class="news-card">
-                <a href="noticia3.html">
-                    <img src="images/tecnologiaalta.png" alt="Mercado de Tecnologia">
-                    <div class="news-content">
-                        <span class="news-date"><i class="far fa-calendar-alt"></i> 05/06/2023</span>
-                        <h3>Mercado de Tecnologia em Alta</h3>
-                        <p>Descubra as oportunidades na área de tecnologia.</p>
-                        <span class="read-more">Ler mais →</span>
-                    </div>
-                </a>
+                <img src="images/tecnologiaalta.png" alt="Mercado de Tecnologia">
+                <div class="news-content">
+                    <span class="news-date"><i class="far fa-calendar-alt"></i> 05/06/2023</span>
+                    <h3>Mercado de Tecnologia em Alta</h3>
+                    <p>Descubra as oportunidades na área de tecnologia.</p>
+                </div>
             </div>
             
             <!-- Notícia 4 -->
             <div class="news-card">
-                <a href="noticia4.html">
-                    <img src="images/not4.png" alt="Qualificação Profissional">
-                    <div class="news-content">
-                        <span class="news-date"><i class="far fa-calendar-alt"></i> 01/06/2023</span>
-                        <h3>Invista na sua qualificação</h3>
+                <img src="images/not4.png" alt="Qualificação Profissional">
+                <div class="news-content">
+                    <span class="news-date"><i class="far fa-calendar-alt"></i> 01/06/2023</span>
+                    <h3>Invista na sua qualificação</h3>
                         <p>Conquiste uma carreira valorizada na área de tecnologia.</p>
                         <span class="read-more">Ler mais →</span>
                     </div>
@@ -243,5 +269,7 @@
 
 <!-- Inclua o JavaScript -->
 <script src="js/acessibilidade.js"></script>
+<script src="js/navigation.js"></script>
 
+</body>
 </html>
